@@ -5,7 +5,7 @@
  */
 class Decrypt{
 	
-	public $key = "la zorra cafe rapidamente brinco sobre el perro negro"; // TODO hacer parametro
+	public $key;
 	public $characters_decrypted = array();
 	
 	public function __construct( $key = "la zorra cafe rapidamente brinco sobre el perro negro" ){
@@ -48,17 +48,19 @@ class Decrypt{
 
 		$key_words =  preg_split ( '/[\s]+/', $this->key );
 		$pattern = array();
+		
 		foreach( $key_words as $word ){
 			$pattern [] = "[a-zñÑ]{" . mb_strlen($word) ."}";
 		}
-		$pattern = "/".implode('[\s]+', $pattern)."/iu";
+		
+		$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
 		preg_match_all ($pattern, $input, $matches);
 
 		$possible_keys = array();
 		
 		foreach ($matches as $match){
 			if( $match[0] ){
-				$possible_keys [] = $match[0]; 
+				$possible_keys [] = trim($match[0]); 
 			}
 		}
 		var_dump($possible_keys);
