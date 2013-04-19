@@ -47,10 +47,12 @@
 	<input type="submit" value="Decrypt" name="btnDecrypt" id="btnDecrypt" class="btn btn-large btn-primary" />
 </form>
 <?php if($output){ ?>
-<img src='http://cdn1.iconfinder.com/data/icons/customicondesignoffice5/128/navigate-right.png' />
+<img src='http://cdn1.iconfinder.com/data/icons/customicondesignoffice5/128/navigate-right.png' class='pull-left mg' />
 <div id="output" class='form-signin pull-left'>
+    Key:
+    <pre><?php echo 'a';?></pre>
 	Output:
-	<div id="textDecrypt"><?php echo $output;?></div>
+	<pre><?php echo $output;?></pre>
 </div> 
 <?php } ?>
     </div> 
