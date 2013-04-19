@@ -1,32 +1,76 @@
 <!DOCTYPE html>
-<html>
-  	<head>
-    	<meta charset="utf-8">
-    	<title>Crypt Kicker</title>
-    	<link rel="stylesheet" href="themes/css/styles.css">
-	</head>
-<body>
-	<div>
-		<h1>Crypt Kicker</h1>
-		<form action="" method="post" id="formDecrypt">
-			<div>
-			<div><label>Key:</label></div>
-				<input type="text" id="txtKey" name="txtKey" value="<?php echo $key;?>" />
-			</div>
-	        <div>
-	        	<div><label>Input:</label></div>
-				<textarea id="txtInput" name="txtInput" rows="10" cols="60" style="resize:none;"><?php echo $input;?></textarea>
-				<div><input type="submit" value="Decrypt" name="btnDecrypt" id="btnDecrypt" /></div>
-	        </div>
-	        <div id="error"><?php if($error) echo "Error: {$error}";?></div>
-	       	<div id="output">
-	       	<?php if($output){ ?>
-	        	<label>Output:</label>
-	          	<div id="textDecrypt"><?php echo $output;?></div>
-	        <?php } ?>
-	        </div>  
-	    </form>
-	    <div id="autor">By: Marcela Bonell.</div>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Crypt-Kicker</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="@mbonell">
+
+    <!-- Le styles -->
+    <link href="themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="themes/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="themes/css/styles.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>                                                                                      
+    <![endif]-->
+
+      </head>
+  <body> 
+  <div id='wrap'>
+   <header class='heady'>
+	<div class="container">
+		<img src='http://cdn1.iconfinder.com/data/icons/juicyfruit_by_salleedesign/128x128/key.png' class='pull-left'/>
+	    <h1>Crypt-Kicker</h1>
 	</div>
-</body>
+</header>
+	 
+		<!-- container -->
+    <div class="container">
+    	<?php if(TRUE || $error) { ?>
+    	<div style='height:5px;'></div>
+	<div class="alert alert-error">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  	  <strong>Error: </strong> <?php echo $error?>
+	</div>
+	<?php } ?>
+    	<div style='height:50px;'></div>
+<form class="form-signin" method="post">
+	<form action="" method="post" id="formDecrypt">
+	<label for='txtKey'>Key:</label>
+	<input id='txtKey' name='txtKey' type='text' class='input-block-level'>
+	<label for='txtInput'>Input:</label>
+	<textarea id="txtInput" name="txtInput" rows="10" cols="60" class="input-block-level"><?php echo $input;?></textarea>
+	<input type="submit" value="Decrypt" name="btnDecrypt" id="btnDecrypt" class="btn btn-large btn-primary" />
+</form>
+
+<div id="output">
+	<?php if($output){ ?>
+	Output:
+	<div id="textDecrypt"><?php echo $output;?></div>
+<?php } ?>
+</div> 
+    </div> 
+    <!-- /container -->
+    
+     </div>
+	<footer class="footer">
+	      <div class="container">
+	        <p class="pull-right"><a href="#">Ir arriba</a></p>
+	        <p><em>By: Marcela Bonell.</em> <i class="icon-heart"></i> </p>
+	        <ul class="footer-links">
+	          <li><a href="http://twitter.com/mbonell">Follow me</a></li>
+	        </ul>
+	      </div>
+	</footer>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  	<script type="text/javascript" src="themes/bootstrap/js/bootstrap.min.js"></script>
+  	
+	</body>
 </html>
