@@ -15,6 +15,7 @@ class IndexController{
 		$output = "";
 		$input  = "";
 		$key    = "";
+		$crypted_key = "";
 		
 			#Form submit
 			if( count($_POST) ){
@@ -38,6 +39,7 @@ class IndexController{
 									if( $decrypt->decryptKey($possible_keys) ){
 										#Translate the input with the key
 										$output = $decrypt->translateInput($array_input);
+										$crypted_key = $decrypt->cryppted_key;
 									}else{
 										$output = "NO SE ENCONTR&Oacute; SOLUCI&Oacute;N";	
 									}

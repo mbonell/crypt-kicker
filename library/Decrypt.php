@@ -6,6 +6,7 @@
 class Decrypt{
 	
 	public $key;
+	public $cryppted_key;
 	public $characters_decrypted = array();
 	
 	public function __construct( $key = "la zorra cafe rapidamente brinco sobre el perro negro" ){
@@ -63,7 +64,8 @@ class Decrypt{
 				$possible_keys [] = trim($match[0]); 
 			}
 		}
-		var_dump($possible_keys);
+
+		$this->cryppted_key = $possible_keys[0];
 		return $possible_keys;
 		
 	}
