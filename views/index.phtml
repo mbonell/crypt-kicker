@@ -30,7 +30,7 @@
 	 
 		<!-- container -->
     <div class="container">
-    	<?php if(TRUE || $error) { ?>
+    	<?php if( $error ) { ?>
     	<div style='height:5px;'></div>
 	<div class="alert alert-error">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -38,21 +38,21 @@
 	</div>
 	<?php } ?>
     	<div style='height:50px;'></div>
-<form class="form-signin" method="post">
+<form class="form-signin <?php if($output){ ?> pull-left <?php }?>" method="post">
 	<form action="" method="post" id="formDecrypt">
 	<label for='txtKey'>Key:</label>
-	<input id='txtKey' name='txtKey' type='text' class='input-block-level'>
+	<input id='txtKey' name='txtKey' type='text' class='input-block-level' value='<?php echo $key;?>'>
 	<label for='txtInput'>Input:</label>
 	<textarea id="txtInput" name="txtInput" rows="10" cols="60" class="input-block-level"><?php echo $input;?></textarea>
 	<input type="submit" value="Decrypt" name="btnDecrypt" id="btnDecrypt" class="btn btn-large btn-primary" />
 </form>
-
-<div id="output">
-	<?php if($output){ ?>
+<?php if($output){ ?>
+<img src='http://cdn1.iconfinder.com/data/icons/customicondesignoffice5/128/navigate-right.png' />
+<div id="output" class='form-signin pull-left'>
 	Output:
 	<div id="textDecrypt"><?php echo $output;?></div>
-<?php } ?>
 </div> 
+<?php } ?>
     </div> 
     <!-- /container -->
     
