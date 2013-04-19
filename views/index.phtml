@@ -9,6 +9,10 @@
 	<div>
 		<h1>Crypt Kicker</h1>
 		<form action="" method="post" id="formDecrypt">
+			<div>
+			<div><label>Key:</label></div>
+				<input type="text" id="txtKey" name="txtKey" value="<?php echo $key;?>" />
+			</div>
 	        <div>
 	        	<div><label>Input:</label></div>
 				<textarea id="txtInput" name="txtInput" rows="10" cols="60" style="resize:none;"><?php echo $input;?></textarea>

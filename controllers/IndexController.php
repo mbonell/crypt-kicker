@@ -9,21 +9,24 @@ class IndexController{
 	 * Entry point function.
 	 */
 	function index(){
-		$decrypt 	   = new Decrypt();
 		$array_input   = array();
 		$possible_keys = array();
 		$error  = "";
 		$output = "";
 		$input  = "";
+		$key    = "";
 		
 			#Form submit
 			if( count($_POST) ){
 				$input = trim($_POST["txtInput"]) != "" ? $_POST["txtInput"] : "";
-
-					#Input no empty
-					if( $input ){
+				$key   = trim($_POST["txtKey"]) != "" ? $_POST["txtKey"] : "";
+				
+					#Input and key no empty
+					if( $input && $key){
+						
 						$array_input = explode("\n", $input);
-
+						$decrypt = new Decrypt($key);
+						
 						#The input has a valid format
 						if( $decrypt->isValidInput($array_input) ){
 							
@@ -47,7 +50,7 @@ class IndexController{
 							$error = "80 characters per line, 100 lines maximum and the first line is a number and the second blank line.";	
 						}
 					}else{
-						$error = "Empty input is not valid!";
+						$error = "Empty input/key is not valid!";
 					}
 			}
 		
