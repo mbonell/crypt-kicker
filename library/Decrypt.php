@@ -53,7 +53,7 @@ class Decrypt{
 			$pattern [] = "[a-zñÑ]{" . mb_strlen($word) ."}";
 		}
 		
-		$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
+		$pattern = "/\s{0,n}".implode('[\s]+', $pattern)."\s{0,n}/iu";
 		preg_match_all ($pattern, $input, $matches);
 
 		$possible_keys = array();
@@ -63,7 +63,7 @@ class Decrypt{
 				$possible_keys [] = trim($match[0]); 
 			}
 		}
-		var_dump($possible_keys);
+
 		return $possible_keys;
 		
 	}
