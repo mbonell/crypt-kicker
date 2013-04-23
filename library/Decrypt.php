@@ -6,7 +6,7 @@
 class Decrypt{
 	
 	public $key;
-	public $cryppted_key;
+	public $crypted_key;
 	public $characters_decrypted = array();
 	
 	public function __construct( $key = "la zorra cafe rapidamente brinco sobre el perro negro" ){
@@ -54,19 +54,17 @@ class Decrypt{
 			$pattern [] = "[a-zñÑ]{" . mb_strlen($word) ."}";
 		}
 		
-		//$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
 		$pattern = "/[\s]*".implode('[\s]+', $pattern)."[\s]*/iu";
 		preg_match_all ($pattern, $input, $matches);
 
 		$possible_keys = array();
-		
+
 		foreach ($matches as $match){
-			if( $match[0] ){
+			if( isset($match[0]) && $match[0] ){
 				$possible_keys [] = trim($match[0]); 
 			}
 		}
 
-		//$this->cryppted_key = $possible_keys[0];
 		return $possible_keys;
 		
 	}
@@ -89,11 +87,8 @@ class Decrypt{
 			}else{	
 				$this->characters_decrypted = array();
 			}
-				
-			$len = mb_strlen($line_key);			
 			
-			//TODO: Validar
-			$this->cryppted_key = $line_key;
+			$len = mb_strlen($line_key);			
 			
 			for($i=0; $i<$len; $i++){
 				if( ($this->key[$i] != " " && mb_substr ( $line_key , $i, 1 ) != " ") 
@@ -106,6 +101,8 @@ class Decrypt{
 				}
 				
 			}
+			
+			$this->crypted_key = $line_key;
 		}
 		return $all_found;
 	}

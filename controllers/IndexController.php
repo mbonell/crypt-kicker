@@ -39,7 +39,7 @@ class IndexController{
 									if( $decrypt->decryptKey($possible_keys) ){
 										#Translate the input with the key
 										$output = $decrypt->translateInput($array_input);
-										$crypted_key = $decrypt->cryppted_key;
+										$crypted_key = $decrypt->crypted_key;
 									}else{
 										$output = "NO SE ENCONTR&Oacute; SOLUCI&Oacute;N";	
 									}
