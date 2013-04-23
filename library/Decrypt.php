@@ -54,7 +54,8 @@ class Decrypt{
 			$pattern [] = "[a-zñÑ]{" . mb_strlen($word) ."}";
 		}
 		
-		$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
+		//$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
+		$pattern = "/[\s]*".implode('[\s]+', $pattern)."[\s]*/iu";
 		preg_match_all ($pattern, $input, $matches);
 
 		$possible_keys = array();
@@ -65,7 +66,7 @@ class Decrypt{
 			}
 		}
 
-		$this->cryppted_key = $possible_keys[0];
+		//$this->cryppted_key = $possible_keys[0];
 		return $possible_keys;
 		
 	}
@@ -90,6 +91,9 @@ class Decrypt{
 			}
 				
 			$len = mb_strlen($line_key);			
+			
+			//TODO: Validar
+			$this->cryppted_key = $line_key;
 			
 			for($i=0; $i<$len; $i++){
 				if( ($this->key[$i] != " " && mb_substr ( $line_key , $i, 1 ) != " ") 
