@@ -55,7 +55,7 @@ class Decrypt{
 		}
 		
 		$pattern = "/[\s]+".implode('[\s]+', $pattern)."[\s]+/iu";
-		echo $pattern ;
+
 		preg_match_all ($pattern, $input, $matches);
 
 		$possible_keys = array();
