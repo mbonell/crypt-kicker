@@ -21,7 +21,7 @@ la zorra cafe rapidamente brinco sobre el perro negro
 1
 
 uñou uñ ub eceuhoc axrx yiu bcñ vcekruñ xqisxh x xtisxr x bx pfuñox<br>
-bx wcrrx qxpu rxafsxeuhou krfhqc ñckru ub aurrc humrc
+bx wcrrx qxpu rxafsxeuhou krfhqc ñckru ub aurrc humrc<br>
 bcñ qchqirñcñ su arcmrxexqfch ñch sfnurofscn
 
 
