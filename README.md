@@ -20,9 +20,9 @@ la zorra cafe rapidamente brinco sobre el perro negro
 
 1
 
-> uñou uñ ub eceuhoc axrx yiu bcñ vcekruñ xqisxh x xtisxr x bx pfuñox
-> bx wcrrx qxpu rxafsxeuhou krfhqc ñckru ub aurrc humrc
-> bcñ qchqirñcñ su arcmrxexqfch ñch sfnurofscn
+uñou uñ ub eceuhoc axrx yiu bcñ vcekruñ xqisxh x xtisxr x bx pfuñox<br>
+bx wcrrx qxpu rxafsxeuhou krfhqc ñckru ub aurrc humrc
+bcñ qchqirñcñ su arcmrxexqfch ñch sfnurofscn
 
 
 http://mbonell.com/crypt_kicker/
